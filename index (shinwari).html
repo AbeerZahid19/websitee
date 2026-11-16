@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Shinwari Restaurant — Main Market, Gulberg II, Lahore</title>
+<meta name="description" content="Golden Shinwari Restaurant, Zanjani Road, Main Market Gulberg II, Lahore. Shinwari karahi, tawa piece, pulao, paye and BBQ. Open daily 4 AM to 1:30 AM. Call 0321 4993327.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Manrope:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coal:#121010;
+    --coal-2:#1c1816;
+    --coal-3:#26201c;
+    --gold:#e2b04a;
+    --gold-soft:#f3d48c;
+    --ember:#d9532b;
+    --cream:#f7efe1;
+    --muted:#b9ab96;
+    --line:rgba(247,239,225,.12);
+    --radius:16px;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Manrope",system-ui,sans-serif;background:var(--coal);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:min(100% - 2.5rem, var(--max));margin-inline:auto}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.1}
+  .urdu{font-family:"Noto Nastaliq Urdu",serif;line-height:2}
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.9rem 1.5rem;border-radius:10px;font-weight:700;text-decoration:none;border:1.5px solid var(--gold);transition:transform .15s, background .2s, color .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:var(--coal)}
+  .btn-gold:hover{background:var(--gold-soft)}
+  .btn-line{color:var(--gold);background:transparent}
+  .btn-line:hover{background:var(--gold);color:var(--coal)}
+
+  /* Top strip */
+  .topstrip{background:var(--gold);color:var(--coal);font-size:.84rem;font-weight:600}
+  .topstrip .wrap{display:flex;justify-content:space-between;gap:1rem;padding:.45rem 0;flex-wrap:wrap}
+  .topstrip a{text-decoration:none}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.45rem;vertical-align:middle;background:#2f7d32}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(18,16,16,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+  .brand svg{width:44px;height:44px}
+  .brand-name{font-family:"Playfair Display",serif;font-weight:800;font-size:1.3rem;line-height:1;color:var(--cream)}
+  .brand-name b{color:var(--gold);font-weight:800}
+  .brand-name small{display:block;font-family:"Manrope",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--cream);opacity:.85;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--gold)}
+  .nav-links .btn{opacity:1;padding:.6rem 1.1rem;color:var(--coal)}
+  .nav-links .btn:hover{color:var(--coal)}
+  .menu-toggle{display:none;width:44px;height:44px;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+  .menu-toggle span{display:block;width:20px;height:2px;background:var(--cream);margin:4px auto;transition:transform .25s, opacity .2s}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:
+      radial-gradient(800px 480px at 78% 55%, rgba(217,83,43,.28), transparent 65%),
+      radial-gradient(600px 400px at 70% 40%, rgba(226,176,74,.18), transparent 60%),
+      linear-gradient(180deg, var(--coal) 0%, var(--coal-2) 100%)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:5.5rem 0 6rem}
+  .hero h1{font-size:clamp(2.7rem, 6vw, 4.8rem);font-weight:800}
+  .hero h1 span{color:var(--gold);font-style:italic}
+  .hero .urdu{font-size:1.4rem;color:var(--gold-soft);margin:.3rem 0 1rem;direction:rtl;text-align:left}
+  .hero p.lead{color:var(--muted);font-size:1.12rem;max-width:40ch;margin-bottom:2.2rem}
+  .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap}
+  .stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line)}
+  .stats strong{display:block;font-family:"Playfair Display",serif;font-size:1.9rem;color:var(--gold);line-height:1}
+  .stats span{font-size:.85rem;color:var(--muted)}
+  .hero-art{position:relative;width:100%;max-width:480px;justify-self:center;aspect-ratio:1}
+  .hero-art .glow{position:absolute;inset:18% 10% 0;background:radial-gradient(circle at 50% 80%, rgba(255,120,40,.55), transparent 60%);filter:blur(20px);animation:flicker 2.4s ease-in-out infinite}
+  @keyframes flicker{0%,100%{opacity:.8}50%{opacity:1}}
+  .hero-art svg{position:relative;width:100%;height:100%}
+  .steam path{stroke:rgba(247,239,225,.45);stroke-width:4;fill:none;stroke-linecap:round;animation:rise 3.4s ease-in-out infinite}
+  .steam path:nth-child(2){animation-delay:1s}.steam path:nth-child(3){animation-delay:2s}
+  @keyframes rise{0%{opacity:0;transform:translateY(14px)}40%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+  .tag-float{position:absolute;background:var(--coal-3);border:1px solid var(--line);border-radius:12px;padding:.65rem .9rem;font-size:.82rem;box-shadow:0 18px 30px -16px rgba(0,0,0,.7)}
+  .tag-float strong{display:block;color:var(--gold);font-size:.95rem}
+  .tag-1{top:10%;left:-2%}
+  .tag-2{bottom:12%;right:-2%}
+
+  /* Sections */
+  section{padding:5.5rem 0}
+  .section-head{max-width:660px;margin-bottom:3rem}
+  .section-head h2{font-size:clamp(2rem, 4vw, 3rem);margin:.7rem 0 .8rem}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+  .center{text-align:center;margin-inline:auto}
+  .center .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
+
+  /* About */
+  .about{background:var(--coal-2)}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .about-panel{position:relative;border-radius:var(--radius);padding:2.6rem;background:linear-gradient(145deg, var(--coal-3), var(--coal));border:1px solid var(--line);overflow:hidden}
+  .about-panel::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:1px dashed rgba(226,176,74,.35)}
+  .about-panel h3{font-size:1.7rem;margin-bottom:1rem}
+  .about-panel ol{list-style:none;display:grid;gap:1.2rem;counter-reset:s}
+  .about-panel li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:start}
+  .about-panel li::before{content:counter(s,decimal-leading-zero);font-family:"Playfair Display",serif;font-size:1.4rem;color:var(--gold);line-height:1.3}
+  .about-panel li strong{display:block}
+  .about-panel li span{color:var(--muted);font-size:.95rem}
+  .pill-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;font-size:.85rem;color:var(--gold-soft)}
+
+  /* Menu */
+  .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+  .tab{font:inherit;font-weight:700;font-size:.92rem;padding:.65rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--cream);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .tab:hover{border-color:var(--gold)}
+  .tab[aria-selected="true"]{background:var(--gold);color:var(--coal);border-color:var(--gold)}
+  .panel{display:none}
+  .panel.active{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .item{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;padding:1.3rem 0;border-bottom:1px dashed var(--line)}
+  .item h3{font-family:"Manrope",sans-serif;font-size:1.08rem;font-weight:700}
+  .item .serves{font-size:.82rem;color:var(--gold);font-weight:600;white-space:nowrap;align-self:center}
+  .item p{grid-column:1/-1;color:var(--muted);font-size:.93rem}
+  .menu-note{margin-top:2rem;color:var(--muted);font-size:.9rem}
+
+  /* Feature band */
+  .feature{background:linear-gradient(90deg, rgba(226,176,74,.12), rgba(217,83,43,.12));border-block:1px solid var(--line)}
+  .feature .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;padding:3rem 0}
+  .feat{display:flex;gap:1rem;align-items:flex-start}
+  .feat .ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--coal-3);border:1px solid var(--line);display:grid;place-items:center;font-size:1.35rem}
+  .feat strong{display:block;margin-bottom:.15rem}
+  .feat span{color:var(--muted);font-size:.9rem}
+
+  /* Visit */
+  .visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.5rem}
+  .info{background:var(--coal-2);border:1px solid var(--line);border-radius:var(--radius);padding:2.4rem;display:flex;flex-direction:column;gap:1.7rem}
+  .info h3{font-family:"Manrope",sans-serif;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+  .info p{color:var(--cream)}
+  .info small{color:var(--muted)}
+  .hours{width:100%;border-collapse:collapse;font-size:.95rem}
+  .hours td{padding:.45rem 0;border-bottom:1px dashed var(--line)}
+  .hours td:last-child{text-align:right;color:var(--muted)}
+  .hours tr.today td{color:var(--gold);font-weight:700}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px;background:var(--coal-3)}
+  .map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:grayscale(.3) contrast(1.05)}
+
+  /* Contact */
+  .contact{background:var(--coal-2)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+  .c-list{display:grid;gap:1rem;margin-top:1.8rem}
+  .c-item{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.3rem;border:1px solid var(--line);border-radius:14px;text-decoration:none;background:var(--coal);transition:border-color .2s, transform .2s}
+  .c-item:hover{border-color:var(--gold);transform:translateX(4px)}
+  .c-item .ic{width:46px;height:46px;border-radius:12px;background:var(--gold);color:var(--coal);display:grid;place-items:center;font-size:1.2rem;flex:none}
+  .c-item strong{display:block}
+  .c-item span{color:var(--muted);font-size:.92rem}
+  form.book{background:var(--coal);border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;display:grid;gap:1rem}
+  form.book h3{font-size:1.6rem}
+  form.book .small{color:var(--muted);font-size:.88rem;margin-top:-.4rem}
+  .field{display:grid;gap:.35rem}
+  .field label{font-size:.85rem;font-weight:700;color:var(--gold-soft)}
+  .field input,.field select,.field textarea{font:inherit;color:var(--cream);background:var(--coal-2);border:1px solid var(--line);border-radius:10px;padding:.8rem .95rem;transition:border-color .2s, box-shadow .2s}
+  .field select option{background:var(--coal-2)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(226,176,74,.18)}
+  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  form.book .btn{width:100%;cursor:pointer;font-size:1rem}
+  .form-msg{font-size:.9rem;min-height:1.2em;color:var(--gold-soft)}
+
+  /* Footer */
+  footer.site{background:#0b0a0a;border-top:1px solid var(--line);padding:4rem 0 1.5rem;color:var(--muted)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}
+  footer h4{font-family:"Playfair Display",serif;color:var(--cream);font-size:1.1rem;margin-bottom:1rem}
+  footer ul{list-style:none;display:grid;gap:.55rem;font-size:.95rem}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--gold)}
+  .foot-about{margin-top:1rem;max-width:32ch;font-size:.95rem}
+  .socials{display:flex;gap:.6rem;margin-top:1.2rem}
+  .socials a{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--cream)}
+  .socials a:hover{border-color:var(--gold);color:var(--gold)}
+  .socials svg{width:18px;height:18px}
+  .foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem}
+  .to-top{position:fixed;right:1.2rem;bottom:1.2rem;width:48px;height:48px;border-radius:12px;background:var(--gold);color:var(--coal);display:grid;place-items:center;text-decoration:none;font-weight:800;font-size:1.2rem;opacity:0;pointer-events:none;transition:opacity .25s;z-index:40;box-shadow:0 10px 24px -10px rgba(0,0,0,.8)}
+  .to-top.show{opacity:1;pointer-events:auto}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+  /* Responsive */
+  @media (max-width:1000px){
+    .feature .wrap{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:880px){
+    .menu-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--coal);border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1.25rem;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s, transform .25s, visibility 0s linear .25s}
+    .nav-links.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s, transform .25s}
+    .nav-links li{border-bottom:1px solid var(--line)}
+    .nav-links li:last-child{border:0;padding-top:1rem}
+    .nav-links a:not(.btn){display:block;padding:1rem 0}
+    .nav-links .btn{width:100%}
+    .hero .wrap,.about .wrap,.visit .wrap,.contact .wrap{grid-template-columns:1fr}
+    .hero .wrap{padding:3rem 0 4rem;gap:2rem}
+    .hero-art{max-width:360px;order:-1}
+    .panel.active{grid-template-columns:1fr}
+    section{padding:4rem 0}
+  }
+  @media (max-width:560px){
+    .topstrip .hide-sm{display:none}
+    .stats{grid-template-columns:repeat(3,1fr);gap:1rem}
+    .stats strong{font-size:1.5rem}
+    .feature .wrap,.foot-grid,.row-2{grid-template-columns:1fr}
+    .tag-1{left:0}.tag-2{right:0}
+    .info,form.book,.about-panel{padding:1.6rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div class="wrap">
+    <span><span class="dot" id="openDot"></span><span id="openStatus">Open daily · 4 AM – 1:30 AM</span></span>
+    <span class="hide-sm">Zanjani Road, Main Market, Gulberg II, Lahore</span>
+    <a href="tel:+923214993327">📞 0321 4993327</a>
+  </div>
+</div>
+
+<header class="site">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#home" class="brand" aria-label="Golden Shinwari Restaurant home">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="#e2b04a" stroke-width="1.5"/>
+        <path d="M10 22 h28 a14 12 0 0 1 -28 0 z" fill="#e2b04a"/>
+        <path d="M7 22 h34" stroke="#e2b04a" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M6 24 q-3 1 -2 4 M42 24 q3 1 2 4" stroke="#e2b04a" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M19 16 q-2 -3 0 -6 M24 16 q-2 -3 0 -6 M29 16 q-2 -3 0 -6" stroke="#f7efe1" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/>
+      </svg>
+      <span class="brand-name"><b>Golden</b> Shinwari<small>Main Market · Gulberg</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+923214993327" class="btn btn-gold">Call to order</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="home" style="padding:0">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Main Market, Gulberg II</span>
+        <h1>Shinwari karahi,<br>cooked the <span>proper</span> way.</h1>
+        <p class="urdu" lang="ur">اصل شنواری ذائقہ</p>
+        <p class="lead">Tawa piece, white karahi, special pulao, bong paye and BBQ from early-morning nashta to well past midnight.</p>
+        <div class="hero-ctas">
+          <a href="tel:+923214993327" class="btn btn-gold">📞 Call 0321 4993327</a>
+          <a href="#menu" class="btn btn-line">See the menu →</a>
+        </div>
+        <div class="stats">
+          <div><strong>4.2★</strong><span>3,000+ Google reviews</span></div>
+          <div><strong>4 AM</strong><span>Doors open daily</span></div>
+          <div><strong>1:30 AM</strong><span>Last orders, late night</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="glow"></div>
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <radialGradient id="gravy" cx="50%" cy="45%" r="60%">
+              <stop offset="0" stop-color="#e9c48a"/><stop offset=".7" stop-color="#c9924c"/><stop offset="1" stop-color="#8a5a2a"/>
+            </radialGradient>
+            <linearGradient id="iron" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a3f38"/><stop offset="1" stop-color="#1a1513"/>
+            </linearGradient>
+          </defs>
+          <g class="steam"><path d="M160 120 Q148 95 160 72 Q172 50 160 28"/><path d="M200 115 Q188 90 200 68 Q212 46 200 24"/><path d="M240 120 Q228 95 240 72 Q252 50 240 28"/></g>
+          <!-- handles -->
+          <path d="M52 210 q-30 4 -26 32 q4 14 22 10" stroke="#3a312b" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <path d="M348 210 q30 4 26 32 q-4 14 -22 10" stroke="#3a312b" stroke-width="12" fill="none" stroke-linecap="round"/>
+          <!-- karahi -->
+          <path d="M50 200 Q200 380 350 200 Z" fill="url(#iron)"/>
+          <ellipse cx="200" cy="200" rx="152" ry="44" fill="#2b2420"/>
+          <ellipse cx="200" cy="203" rx="138" ry="36" fill="url(#gravy)"/>
+          <!-- meat pieces -->
+          <g fill="#a8642c" stroke="#7a431b" stroke-width="2">
+            <path d="M120 196 q14 -16 34 -6 q10 10 -4 20 q-18 8 -30 -14z"/>
+            <path d="M175 186 q20 -12 36 2 q6 14 -14 20 q-20 2 -22 -22z"/>
+            <path d="M232 194 q18 -14 34 -2 q8 12 -10 20 q-18 6 -24 -18z"/>
+            <path d="M150 214 q16 -8 28 4 q2 10 -14 12 q-14 0 -14 -16z"/>
+            <path d="M210 216 q16 -10 30 0 q4 10 -12 14 q-16 2 -18 -14z"/>
+          </g>
+          <!-- tomato, chilli, ginger, coriander -->
+          <g>
+            <circle cx="268" cy="214" r="9" fill="#d9532b"/><circle cx="268" cy="214" r="4" fill="#f08a62"/>
+            <circle cx="140" cy="222" r="8" fill="#d9532b"/>
+            <path d="M190 204 q20 -6 34 4" stroke="#3f8a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M250 182 q14 6 24 0" stroke="#3f8a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <g stroke="#f3d48c" stroke-width="3" stroke-linecap="round"><path d="M128 190 l14 -4"/><path d="M220 228 l14 -2"/><path d="M178 230 l12 2"/></g>
+            <g fill="#5fa04e"><circle cx="160" cy="196" r="3"/><circle cx="205" cy="198" r="3"/><circle cx="246" cy="208" r="3"/><circle cx="185" cy="220" r="3"/><circle cx="230" cy="186" r="3"/></g>
+          </g>
+          <ellipse cx="200" cy="200" rx="152" ry="44" fill="none" stroke="#6a5a4e" stroke-width="3"/>
+        </svg>
+        <div class="tag-float tag-1"><strong>Shinwari karahi</strong>Salt, black pepper, slow fire</div>
+        <div class="tag-float tag-2"><strong>Open till 1:30 AM</strong>Every single day</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <div class="feature">
+    <div class="wrap">
+      <div class="feat reveal"><span class="ic">🔥</span><div><strong>Cooked to order</strong><span>Karahi made fresh on the flame for your table.</span></div></div>
+      <div class="feat reveal"><span class="ic">🌅</span><div><strong>Nashta from 4 AM</strong><span>Bong paye and early breakfast before the city wakes.</span></div></div>
+      <div class="feat reveal"><span class="ic">🌙</span><div><strong>Late-night dinners</strong><span>Open until 1:30 AM, seven days a week.</span></div></div>
+      <div class="feat reveal"><span class="ic">📍</span><div><strong>Main Market</strong><span>Zanjani Road, in the heart of Gulberg II.</span></div></div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">About us</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>The taste of the frontier, in Gulberg</h2>
+          <p>Shinwari cooking is simple and confident: good meat, a heavy karahi, salt, black pepper, tomatoes and a hot flame. At Golden Shinwari we cook it that way for families, friends and late-night crowds at Main Market.</p>
+        </div>
+        <div class="pill-row">
+          <span class="pill">Dine-in</span><span class="pill">Takeaway</span><span class="pill">Family seating</span><span class="pill">Bulk &amp; party orders</span>
+        </div>
+      </div>
+      <div class="about-panel reveal">
+        <h3>How we make a Shinwari karahi</h3>
+        <ol>
+          <li><div><strong>Fresh cuts, every day</strong><span>Chicken and mutton prepared in the kitchen each morning.</span></div></li>
+          <li><div><strong>Few spices, done right</strong><span>Salt, black pepper, green chilli and tomato. Nothing to hide behind.</span></div></li>
+          <li><div><strong>Straight from the flame</strong><span>Served bubbling in the karahi with hot naan.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our menu</span>
+        <h2>From the karahi, the tawa and the grill</h2>
+        <p>Call ahead for today's prices and karahi sizes.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p-karahi" id="t-karahi">Karahi</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-tawa" id="t-tawa">Tawa &amp; BBQ</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-rice" id="t-rice">Pulao &amp; Nashta</button>
+      </div>
+
+      <div class="panel active reveal" id="p-karahi" role="tabpanel" aria-labelledby="t-karahi">
+        <div class="item"><h3>Chicken Shinwari Karahi</h3><span class="serves">Half / Full</span><p>Classic Shinwari style with salt, black pepper and tomato, cooked on high flame.</p></div>
+        <div class="item"><h3>Mutton Shinwari Karahi</h3><span class="serves">Half / Full kg</span><p>Tender mutton in its own juices, the way the frontier makes it.</p></div>
+        <div class="item"><h3>White Karahi</h3><span class="serves">Half / Full</span><p>Creamy, mild karahi with yogurt, cream and fresh black pepper.</p></div>
+        <div class="item"><h3>Chicken Karahi</h3><span class="serves">Half / Full</span><p>Lahori-style karahi with tomato, ginger and green chilli.</p></div>
+      </div>
+
+      <div class="panel" id="p-tawa" role="tabpanel" aria-labelledby="t-tawa">
+        <div class="item"><h3>Chicken Tawa Piece</h3><span class="serves">Per piece</span><p>Spiced chicken cooked on the big tawa until crisp at the edges.</p></div>
+        <div class="item"><h3>Boneless Tawa Piece</h3><span class="serves">Per plate</span><p>The same tawa flavour, boneless and easy to share.</p></div>
+        <div class="item"><h3>Chicken Kebab</h3><span class="serves">Per plate</span><p>Charcoal-grilled kebabs with chutney and salad.</p></div>
+        <div class="item"><h3>BBQ Platter</h3><span class="serves">For sharing</span><p>A mix from the grill. Ask what's fresh tonight.</p></div>
+      </div>
+
+      <div class="panel" id="p-rice" role="tabpanel" aria-labelledby="t-rice">
+        <div class="item"><h3>Special Pulao</h3><span class="serves">Single / Family</span><p>Fragrant pulao with tender meat, a house favourite.</p></div>
+        <div class="item"><h3>Bong Paye</h3><span class="serves">Morning</span><p>Slow-cooked overnight and ready for the early nashta crowd.</p></div>
+        <div class="item"><h3>Tandoori Naan</h3><span class="serves">Per piece</span><p>Fresh from the tandoor to go with every karahi.</p></div>
+        <div class="item"><h3>Raita &amp; Salad</h3><span class="serves">Side</span><p>The cooling sides every karahi needs.</p></div>
+      </div>
+
+      <p class="menu-note">Menu and availability may vary by time of day. Prices shown at the restaurant.</p>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="info reveal">
+        <div><span class="eyebrow">Visit us</span><h2 style="font-size:2.1rem;margin-top:.6rem">Find us at Main Market</h2></div>
+        <div><h3>Address</h3><p>Zanjani Road, Block B, Gulberg II<br>Main Market, Lahore</p></div>
+        <div>
+          <h3>Opening hours</h3>
+          <table class="hours" id="hoursTable">
+            <tr data-day="1"><td>Monday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>4:00 AM – 1:30 AM</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>4:00 AM – 1:30 AM</td></tr>
+          </table>
+        </div>
+        <a class="btn btn-gold" style="align-self:flex-start" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Golden+Shinwari+Restaurant/data=!4m7!3m6!1s0x391904f7294e66b1:0xf4cab34f6b76bd7f!8m2!3d31.5237039!4d74.344532!16s%2Fg%2F1tdl92y5!19sChIJsWZOKfcEGTkRf712a0-zyvQ">Get directions →</a>
+      </div>
+      <div class="map reveal">
+        <iframe title="Map showing Golden Shinwari Restaurant, Main Market, Gulberg II, Lahore" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=31.5237039,74.344532&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Contact</span>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Book a table or order for a party</h2>
+          <p>Call to order, or send us your details on WhatsApp for a family table, office lunch or dawat order.</p>
+        </div>
+        <div class="c-list">
+          <a class="c-item" href="tel:+923214993327"><span class="ic">📞</span><div><strong>Call us</strong><span>0321 4993327</span></div></a>
+          <a class="c-item" href="https://wa.me/923214993327" target="_blank" rel="noopener"><span class="ic">💬</span><div><strong>WhatsApp</strong><span>Send your order or booking</span></div></a>
+          <a class="c-item" href="https://www.instagram.com/goldenrestaurantandshinwari" target="_blank" rel="noopener"><span class="ic">📸</span><div><strong>Instagram</strong><span>@goldenrestaurantandshinwari</span></div></a>
+        </div>
+      </div>
+
+      <form class="book reveal" id="bookForm" novalidate>
+        <h3>Table or party order</h3>
+        <p class="small">This opens WhatsApp with your request typed out. Nothing is stored on this site.</p>
+        <div class="row-2">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="e.g. Bilal" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="03xx xxxxxxx" required></div>
+        </div>
+        <div class="row-2">
+          <div class="field"><label for="kind">I want to</label>
+            <select id="kind" name="kind"><option>Book a table</option><option>Place a takeaway order</option><option>Order for a party / office</option></select>
+          </div>
+          <div class="field"><label for="people">People</label><input id="people" name="people" type="number" min="1" value="4"></div>
+        </div>
+        <div class="field"><label for="when">Date &amp; time</label><input id="when" name="when" placeholder="e.g. Friday, 9 PM"></div>
+        <div class="field"><label for="notes">Order / notes</label><textarea id="notes" name="notes" rows="3" placeholder="e.g. 1 kg mutton Shinwari karahi, 6 naan"></textarea></div>
+        <button class="btn btn-gold" type="submit">Send on WhatsApp →</button>
+        <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" class="brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true" style="width:44px;height:44px">
+            <circle cx="24" cy="24" r="22.5" fill="none" stroke="#e2b04a" stroke-width="1.5"/>
+            <path d="M10 22 h28 a14 12 0 0 1 -28 0 z" fill="#e2b04a"/>
+            <path d="M7 22 h34" stroke="#e2b04a" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name"><b>Golden</b> Shinwari<small>Main Market · Gulberg</small></span>
+        </a>
+        <p class="foot-about">Shinwari karahi, tawa piece, pulao, paye and BBQ on Zanjani Road, Gulberg II.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/goldenrestaurantandshinwari" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/923214993327" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1.2 2 .9c-.2 1.3-1.3 2-2.5 1.8C10.6 15 9 13.4 8.5 10.1 8.3 8.9 9 7.8 10.3 7.6l.9 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#visit">Location &amp; hours</a></li><li><a href="#contact">Book / order</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Every day</li><li>4:00 AM – 1:30 AM</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+923214993327">0321 4993327</a></li><li>Zanjani Road, Block B</li><li>Main Market, Gulberg II, Lahore</li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Golden Shinwari Restaurant. All rights reserved.</span>
+      <span>Cooked on a hot flame in Lahore</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#home" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+
+<script>
+  // Mobile nav
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Open/closed in Lahore time: open 4:00 AM, closes 1:30 AM next day (closed 1:30–4:00)
+  const lahore = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
+  const mins = lahore.getHours() * 60 + lahore.getMinutes();
+  const isOpen = !(mins >= 90 && mins < 240);
+  document.getElementById('openStatus').textContent = isOpen ? 'Open now · until 1:30 AM' : 'Closed now · opens 4 AM';
+  document.getElementById('openDot').style.background = isOpen ? '#2f7d32' : '#9b2c14';
+  const row = document.querySelector(`#hoursTable tr[data-day="${lahore.getDay()}"]`);
+  if (row) row.classList.add('today');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Menu tabs
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', 'false'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    t.setAttribute('aria-selected', 'true');
+    const p = document.getElementById(t.getAttribute('aria-controls'));
+    p.classList.add('active', 'in');
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Back to top
+  const toTop = document.getElementById('toTop');
+  addEventListener('scroll', () => toTop.classList.toggle('show', scrollY > 600), { passive: true });
+
+  // Booking form -> WhatsApp (front-end only)
+  document.getElementById('bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, msg = document.getElementById('formMsg');
+    if (!f.name.value.trim() || !f.phone.value.trim()) {
+      msg.style.color = '#f08a62'; msg.textContent = 'Please add your name and phone number.'; return;
+    }
+    const lines = [
+      'Assalam o Alaikum! Request from the website:',
+      `Name: ${f.name.value.trim()}`,
+      `Phone: ${f.phone.value.trim()}`,
+      `Request: ${f.kind.value}`,
+      `People: ${f.people.value}`,
+      `When: ${f.when.value || '-'}`,
+      `Notes: ${f.notes.value || '-'}`
+    ];
+    msg.style.color = ''; msg.textContent = 'Opening WhatsApp…';
+    window.open(`https://wa.me/923214993327?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
